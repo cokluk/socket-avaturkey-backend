@@ -1,10 +1,15 @@
 {
   "name": "avaturkey",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "Avaturkey oyun sunucusu — Socket.IO ve Redis tabanlı gerçek zamanlı backend",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "author": "COKLUK",
   "license": "ISC",
