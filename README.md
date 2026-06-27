@@ -1,62 +1,55 @@
-# Avaturkey Oyun Sunucusu
+# Avaturkey Game Server
 
-Socket.IO ve Redis kullanan Avaturkey oyun sunucusu.
+Avaturkey game server powered by Socket.IO and Redis.
 
-## Gereksinimler
+## Requirements
 
 - Node.js 14+
 - Redis 3.x+
 
-## Kurulum
+## Installation
 
 ```bash
 npm install
 ```
 
-## Çalıştırma
-
-Üretim:
+## Running
 
 ```bash
 npm start
-```
-
-Geliştirme (otomatik yeniden başlatma):
-
-```bash
 npm run dev
 ```
 
-Varsayılan port: **8443** — `PORT` ortam değişkeni ile değiştirilebilir.
+Default port: **8443** — override with the `PORT` environment variable.
 
-Redis bağlantısı için `REDIS_HOST` ve `REDIS_PORT` ortam değişkenlerini kullanabilirsiniz.
+Use `REDIS_HOST` and `REDIS_PORT` to configure the Redis connection.
 
-## Proje Yapısı
+## Project Structure
 
 ```
 src/
-├── config.js              Sunucu ve Redis yapılandırması
-├── server.js              Socket.IO sunucu başlatıcı
-├── constants/game.js      Oyun sabitleri (mağaza, görev, kutu)
-├── handlers/              Socket olay işleyicileri
-├── models/Player.js       Oyuncu modeli
-├── redis/client.js        Redis istemcisi
-├── services/              İş mantığı katmanı
-└── utils/                 Yardımcı fonksiyonlar
+├── config.js              # Server and Redis configuration
+├── server.js              # Socket.IO server bootstrap
+├── constants/game.js      # Game constants (shop, quests, boxes)
+├── handlers/              # Socket event handlers
+├── models/Player.js       # Player model
+├── redis/client.js        # Redis client
+├── services/              # Business logic layer
+└── utils/                 # Helper functions
 ```
 
-## Socket Olayları
+## Socket Events
 
-| Olay | Açıklama |
-|------|----------|
-| `spawn` | Bağlantı sonrası oyuncu verisi |
-| `bilgi` | Giriş / profil yükleme |
-| `magaza` | Mağaza satın alma |
-| `odul` | Ödül talebi |
-| `AC.GNDR` | Avacoin transferi |
-| `promo` | Promosyon kodu |
-| `kutu` | Günlük kutu |
-| `itibar` | İtibar güncelleme |
-| `hesap` | Hesap / klan düzenleme |
-| `gorev` | Görev ilerlemesi |
-| `set_bilgi` | Seviye güncelleme |
+| Event | Description |
+|-------|-------------|
+| `spawn` | Player data after connection |
+| `bilgi` | Login / profile load |
+| `magaza` | Shop purchase |
+| `odul` | Reward claim |
+| `AC.GNDR` | Avacoin transfer |
+| `promo` | Promo code |
+| `kutu` | Daily box |
+| `itibar` | Reputation update |
+| `hesap` | Account / clan edit |
+| `gorev` | Quest progress |
+| `set_bilgi` | Level update |
