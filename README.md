@@ -1,4 +1,4 @@
-# Avaturkey Game Server
+# Avaturkey Oyun Sunucusu
 
 Socket.IO ve Redis kullanan Avaturkey oyun sunucusu.
 
@@ -15,11 +15,15 @@ npm install
 
 ## Çalıştırma
 
-```bash
-# Üretim
-npm start
+Üretim:
 
-# Geliştirme (otomatik yeniden başlatma)
+```bash
+npm start
+```
+
+Geliştirme (otomatik yeniden başlatma):
+
+```bash
 npm run dev
 ```
 
@@ -31,14 +35,14 @@ Redis bağlantısı için `REDIS_HOST` ve `REDIS_PORT` ortam değişkenlerini ku
 
 ```
 src/
-├── config.js              # Sunucu ve Redis yapılandırması
-├── server.js              # Socket.IO sunucu başlatıcı
-├── constants/game.js      # Oyun sabitleri (mağaza, görev, kutu)
-├── handlers/              # Socket olay işleyicileri
-├── models/Player.js       # Oyuncu modeli
-├── redis/client.js        # Redis istemcisi
-├── services/              # İş mantığı katmanı
-└── utils/                 # Yardımcı fonksiyonlar
+├── config.js              Sunucu ve Redis yapılandırması
+├── server.js              Socket.IO sunucu başlatıcı
+├── constants/game.js      Oyun sabitleri (mağaza, görev, kutu)
+├── handlers/              Socket olay işleyicileri
+├── models/Player.js       Oyuncu modeli
+├── redis/client.js        Redis istemcisi
+├── services/              İş mantığı katmanı
+└── utils/                 Yardımcı fonksiyonlar
 ```
 
 ## Socket Olayları

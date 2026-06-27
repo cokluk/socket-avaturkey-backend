@@ -23,14 +23,12 @@ class Player {
     this.send = '';
     this.cid = null;
 
-    // Klan
     this.clan_name = '';
     this.clan_tag = '';
     this.p_sifre = '';
     this.clan_role = '';
     this.clan_pin = '';
 
-    // Görev
     this.duello = '';
     this.tokalas = '';
     this.tekme = '';

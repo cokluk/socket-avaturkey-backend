@@ -1,6 +1,5 @@
 'use strict';
 
-/** Mağaza ürün tanımları — fiyat ve satın alma sonrası işlemler. */
 const SHOP_PRODUCTS = {
   '1': { price: 350, apply: null },
   '2': { price: 350, apply: null },

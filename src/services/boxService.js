@@ -28,7 +28,6 @@ async function openDailyBox(uid, optionId) {
 
   await redis.set(userKey(uid, 'kutu'), today);
 
-  // Kutu açıldıktan sonra bugün tekrar alınamaz
   return { box: boxValue, box_kazanc: 'hata' };
 }
 

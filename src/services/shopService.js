@@ -55,7 +55,6 @@ async function purchaseProduct(uid, productId) {
   const product = SHOP_PRODUCTS[productId] || SHOP_PRODUCTS['1'];
   const coin = parseFloat(await redis.get(userKey(uid, 'avacoin'))) || 0;
 
-  // Orijinal istemci uyumluluğu: yeterli bakiye için coin > fiyat olmalı (eşit değil)
   if (coin <= product.price) {
     return { success: false, productId: 'hata' };
   }
